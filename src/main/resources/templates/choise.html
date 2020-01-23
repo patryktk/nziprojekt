@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:src="@{/images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+
+<body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+<div class="choiseContainer">
+    <p class="block-heading">
+        Witaj w Yourganizer!
+    </p><br/>
+    <button class="block" type="button">
+        <a class="my-ref" href="/login">
+            Logowanie
+        </a>
+    </button>
+    <br/>
+
+    <button class="block" type="button">
+        <a class="my-ref" href="/register">
+            Rejestracja
+        </a>
+    </button>
+    <br/>
+</div>
+
+</body>
+
+</html>

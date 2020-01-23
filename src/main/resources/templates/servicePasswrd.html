@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+            <meta charset="UTF-8">
+        <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+        <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+        <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+    </head>
+
+    <body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+         <div class="choiseContainer">
+            <input class="block-reset" placeholder="Podaj email">
+            <br />
+            <button class="block-reset" type="button">
+                <a class="my-ref" href="/resetinfo">
+                Restetuj hasło
+                </a>
+            </button><br />
+         </div>   
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+
+<body class="my-body" th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}" th:style="'background-image: url(/images/background.jpg);'">
+<div class="choiseContainer">
+    <h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+    <p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
+    <a href="/index" th:href="@{/index}">Back to Home Page</a>
+</div>
+</body>
+</html>

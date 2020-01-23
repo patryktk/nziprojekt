@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+<body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+
+<div class="registrationContainer">
+
+    <p class="block-heading">
+        Rejestracja
+    </p>
+    <br/>
+    <form id="3" action="#" th:action="@{/signup}" th:object="${user}" method="post">
+
+        <input class="block" placeholder="login" required th:field="*{username}">
+        <br/>
+        <input class="block" id="email" placeholder="Podaj email" required th:field="*{email}">
+        <br/>
+
+        <input class="block" id="email2" placeholder="Potwierdź email" required>
+        <br/>
+
+        <input type="password" class="block" id="2" placeholder="Podaj hasło" required th:field="*{password}">
+        <br/>
+
+        <input type="password" class="block" id="1" placeholder="Potwierdź hasło" required>
+
+        <br/>
+        <button onclick="checkPasswordandEmail()" class="block">Zarejestruj</button>
+
+        <script>
+            function checkPasswordandEmail() {
+                if (document.getElementById("2").value === document.getElementById("1").value &&
+                    document.getElementById("email").value === document.getElementById("email2").value) {
+                    var inp = document.createElement("INPUT");
+                    inp.setAttribute("type", "submit");
+                    inp.setAttribute("class", "block");
+
+                } else {
+                    alert("Sprawdź hasło");
+                    return false;
+                }
+            }
+        </script>
+        <!-- <input type="submit" class="block" onclick="checkPasswordandEmail()">-->
+    </form>
+    <br/>
+
+    <input class="block-conditions" type="checkbox" name="agreed" value="agreed">
+    <label id="conditions-agreed">
+        Zapoznałem się z <a href="/regulamin">warunkami</a>
+    </label>
+    <br/>
+
+</div>
+</body>
+</html>

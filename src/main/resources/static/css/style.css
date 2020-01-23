@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+div.logoContainer img
+{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, 150%);
+
+}
+.choiseContainer
+{
+    position: relative;
+    left: 50%;
+    margin-right: - 50%;
+    transform: translate(-48%, 50%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:300px;
+    width: 300px;
+}
+.loginContainer
+{
+    position: relative;
+    left: 50%;
+    margin-right: - 50%;
+    transform: translate(-48%, 20%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:450px;
+    width: 300px;
+}
+.registrationContainer
+{
+    position: relative;
+    left: 50%;
+    margin-right: - 50%;
+    transform: translate(-48%, 2%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:600px;
+    width: 300px;
+}
+.mainPageContainer
+{
+    position: relative;
+    left: 10%;
+    margin-right: -50%;
+    transform: translate(-48%, 2%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:600px;
+    width: 300px;
+}
+.my-body
+{
+    background-size: cover;
+    
+}
+
+.block
+{   
+    position: relative;
+    left:50%;
+    margin-right: - 50%;
+    transform: translate(-50%, 25%);
+    display: block;
+    background-color: rgba(112,112,112,0.4);
+    border-color: rgba(79, 40, 121,0.7);
+    border-width: 1px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px 25px 25px 25px;
+    outline: none;
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+  
+    
+}
+.block:focus
+{
+    transition: 500ms;
+    background:rgba(112,112,112,0.25);
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+}
+.block-reset
+{
+    position: relative;
+    left:50%;
+    margin-right: - 50%;
+    transform: translate(-50%, 175%);
+    display: block;
+    background-color: rgba(112,112,112,0.4);
+    border-color: rgba(79, 40, 121,0.7);
+    border-width: 1px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px 25px 25px 25px;
+    outline: none;
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+}
+.block-reset:focus
+{
+    transition: 500ms;
+    background:rgba(112,112,112,0.25);
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+}
+.my-ref
+{
+    font-family:'PT Sans', sans-serif;
+    text-decoration: none;
+    color:rgb(173, 173, 173);
+}
+.block-heading
+{   
+    margin-block-start: 50px;
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+   
+}
+.registration-info
+{
+    margin-block-start: 75px;
+    padding:25px;
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173);
+}
+.block-conditions
+{
+    margin-block-start: 20px;
+}
+.buttonGroup{
+    width: 100%;
+    margin-left: none;
+    margin-bottom: none;
+    margin-right: none;
+}
+.buttonGroup button {
+    background-color: rgba(79, 40, 121,0.7);
+    border: 1px solid rgba(112,112,112,0.25); /* Green border */
+    color: rgb(173, 173, 173); /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+    text-decoration: none;
+    position: relative;
+    width: 25%;
+    bottom: 0px;
+
+  }
+  
+  .buttonGroup button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .buttonGroup:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  
+  .buttonGroup button:hover {
+    background-color: rgba(79, 40, 121,0.3);
+  }
+.klasa{
+    position: relative;
+    left:50%;
+    margin-right: -50%;
+    transform: translate(-50%, 25%);
+    display: block;
+    text-align: center;
+    outline: none;
+    font-family:'PT Sans', sans-serif;
+    color:rgb(173, 173, 173)!important;
+}
+#conditions-agreed
+{
+    font-family:'PT Sans', sans-serif !important;
+    color:rgb(173, 173, 173) !important;
+}
+
+.kolor{
+    color:rgb(173, 173, 173)!important;
+    text-align: center;
+}

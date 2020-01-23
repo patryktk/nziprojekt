@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+<hmtl>
+    <body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+    <div class="loginContainer">
+        <p class="block-heading">
+            Logowanie
+        </p>
+        <p th:if="${loginError}" class="error">Wrong user or password</p>
+        <form th:action="@{/login}" method="post">
+            <input type="text" class="block" placeholder="Username" id="username" name="username" autofocus="autofocus"/> <br/>
+            <input type="password" class="block" placeholder="Password" id="password" name="password"/> <br/>
+            <input type="submit" class="block " value="Log in"/>
+        </form>
+        <br />
+        <button class="block" type="button">
+            <a class="my-ref" href="/servicepasswrd">
+                Nie pamiętam hasła
+            </a>
+        </button><br />
+
+    </div>
+    </body>
+</hmtl>

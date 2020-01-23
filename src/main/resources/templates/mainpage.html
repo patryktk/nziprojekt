@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+<html>
+    <body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+    <div class="mainPageContainer">
+
+        <form action="#" method="post">
+
+            <label for="startime" class="klasa">Data początkowa</label><br/>
+            <input id="startime" type="datetime-local"  class="block" placeholder="Start time" value="2018-06-12T19:30"><br/>
+
+        
+            <label for="endtime" class="klasa">Data końcowa</label><br/>
+            <input id="endtime" type="datetime-local" class="block" placeholder="End Time"  value="2018-06-12T19:30"><br/>
+        
+            <input type="text" class="block" placeholder="Treść"><br/>
+        
+            <p class="klasa">Wybierz priorytet</p>
+            <input type="radio" class="klasa" name="priority" value="wysoki">
+            <div class="kolor">
+                Wysoki
+            </div>
+                <br>
+            <input type="radio" class="klasa" name="priority" value="normalny">
+            <div class="kolor">
+            Normalny
+            </div>
+            <br>
+            <input type="radio" class="klasa" name="priority" value="niski">
+            <div class="kolor">
+            Niski
+            </div>
+            <br>
+        </form>
+
+    </div>
+    <div class="buttonGroup">
+        <button>Dodaj</button>
+        <button>Usuń</button>
+        <button>Ustawienia</button>
+        <button>
+            <a  href="/login">
+                Wyloguj
+            </a>
+        </button>
+    </div>
+    </body>
+</html>
