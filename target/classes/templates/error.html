@@ -10,11 +10,11 @@
 <body class="my-body" th:with="httpStatus=${T(org.springframework.http.HttpStatus).valueOf(#response.status)}" th:style="'background-image: url(/images/background.jpg);'">
 <div class="errorContainer">
     <div class="errorText"></div>
-    <h1 th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
-    <p th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
+    <h1 style="color: white" th:text="|${httpStatus} - ${httpStatus.reasonPhrase}|">404</h1>
+    <p style="color: white" th:utext="${errorMessage}">Error java.lang.NullPointerException</p>
     <br />
     <br />
-    <a href="/index" th:href="@{/index}">Back to Home Page</a>
+    <a style="color: white" href="/index" th:href="@{/choise}">Back to Home Page</a>
 </div>
 
 </div>

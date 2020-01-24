@@ -44,8 +44,9 @@ public class SpringSecruityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin().permitAll()
-                .and()
-                .logout().permitAll();
+                .and().logout().    //logout configuration
+                logoutUrl("/logout").
+                logoutSuccessUrl("/choise");
     }
 
     @Bean

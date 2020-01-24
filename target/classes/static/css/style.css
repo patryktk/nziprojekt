@@ -259,12 +259,16 @@ div.logoContainer img
 
 .singleButton1 {
     float:left;
-    width:50%;
+    width:33%;
 }
 
 .singleButton2 {
     float:left;
-    width:50%;
+    width:33%;
+}
+.singleButton3 {
+    float:left;
+    width:33%;
 }
 .errorContainer
 {
