@@ -60,7 +60,7 @@ div.logoContainer img
 .mainPageContainer
 {
     position: relative;
-    left: 10%;
+    left: 50%;
     margin-right: -50%;
     transform: translate(-48%, 2%);
     text-align: center;
@@ -71,6 +71,22 @@ div.logoContainer img
     border-radius: 50px 50px 50px 50px;
     border-width: 1px;
     height:600px;
+    width: 300px;
+}
+.deletePageContainer
+{
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-48%, 2%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:300px;
     width: 300px;
 }
 .my-body
@@ -144,6 +160,10 @@ div.logoContainer img
     color:rgb(173, 173, 173);
    
 }
+.date-heading
+{
+    font-size: 15px;
+}
 .registration-info
 {
     margin-block-start: 75px;
@@ -210,4 +230,59 @@ div.logoContainer img
 .kolor{
     color:rgb(173, 173, 173)!important;
     text-align: center;
+}
+.calendarContainer
+{
+    background-color: whitesmoke;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-48%, 2%);
+    text-align: center;
+    display: block;
+    border-style: solid;
+    border-color:rgba(79, 40, 121, 0.75);
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:825px;
+    width: 1000px;
+}
+.buttonsContainer
+{
+}
+
+.buttonsContainer:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.singleButton1 {
+    float:left;
+    width:50%;
+}
+
+.singleButton2 {
+    float:left;
+    width:50%;
+}
+.errorContainer
+{
+    position: relative;
+    left: 50%;
+    margin-right: - 50%;
+    transform: translate(-48%, 50%);
+    text-align: center;
+    display: block;
+    background-color: rgba(33, 18, 51, 0.75);
+    border-color:rgba(79, 40, 121, 0.75);
+    border-style: solid;
+    border-radius: 50px 50px 50px 50px;
+    border-width: 1px;
+    height:300px;
+    width: 600px;
+}
+.errorText
+{
+    color: white;
 }

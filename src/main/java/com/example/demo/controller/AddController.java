@@ -1,32 +1,32 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Priority;
+
 import com.example.demo.model.Task;
 import com.example.demo.model.User;
+import com.example.demo.repository.TaskRepo;
 import com.example.demo.service.TaskService;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.List;
+@Controller
+public class AddController {
 
-@RestController
-public class CalendarController {
-
-
-    //tutaj dodajemy wszystkie metody zwiazane z kalendarzem, czasem itp. metody dotyczace uzytkownika aplikacji sa w UserController
 
     private TaskService taskService;
+    private TaskRepo taskRepo;
     private UserService userService;
 
     @Autowired
-    public CalendarController(TaskService taskService, UserService userService) {
+    public AddController(TaskService taskService, UserService userService, TaskRepo taskRepo) {
         this.taskService = taskService;
         this.userService = userService;
+        this.taskRepo = taskRepo;
     }
 
     public User findUser(){
@@ -39,9 +39,27 @@ public class CalendarController {
             return null;
     }
 
-    @RequestMapping(value = "/show", method = RequestMethod.GET)
-    public List<Task> showTasks(){
-        return taskService.findAllTasksByUser(findUser());
+    @GetMapping("/addtask")
+    public String add(Task task, Model model){
+        model.addAttribute(task);
+        return "adds";
     }
 
+    @PostMapping("/add")
+    public String addTask(Task task, Model model){
+        task.setUser(findUser());
+        taskService.saveTask(task);
+        return "mainpage";
+    }
+
+    @GetMapping("/deletetask")
+    public String delete(){
+        return "delete";
+    }
+
+    @PostMapping("/delete")
+    public String deleteTask(@RequestParam Long id){
+        taskService.deleteTask(id);
+        return "mainpage";
+    }
 }

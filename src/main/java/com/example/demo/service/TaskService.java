@@ -1,18 +1,16 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Task;
+import com.example.demo.model.User;
 import org.joda.time.LocalDate;
 
-import java.util.Date;
 import java.util.List;
 
 public interface TaskService {
 
-    List<String> createMonthLabels(LocalDate month);
+    List<Task> findAllTasksByUser(User user);
 
-    List<Task> findsTasks(Date start, Date end);
-
-    boolean saveTask(Task task);
+    Task saveTask(Task task);
 
     boolean deleteTask(Long id);
 }

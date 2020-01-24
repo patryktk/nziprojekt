@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
+    <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+</head>
+<html>
+<body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+<div class="mainPageContainer">
+
+    <p class="block-heading">Dodawanie zadania</p>
+
+    <br/>
+
+    <form style="display: block; text-align: center" action="#" method="post" th:action="@{/add}" th:object="${task}">
+
+        <label for="startime" class="klasa">Data początkowa</label><br/>
+        <input id="startime" type="date" class="block" placeholder="Start time" th:field="*{start}"><br/>
+
+
+        <label for="endtime" class="klasa">Data końcowa</label><br/>
+        <input id="endtime" type="date" class="block" placeholder="End Time"  th:field="*{end}"><br/>
+
+        <input type="text" class="block" placeholder="Treść" th:field="*{title}"><br/>
+
+        <input type="text" class="block" placeholder="Komentarz" th:field="*{content}"><br/>
+
+        <button class="block" type="button">Dodaj zadanie</button>
+    </form>
+</div>
+</body>
+</html>

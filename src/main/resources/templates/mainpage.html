@@ -1,54 +1,80 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset='utf-8' content="Cory Sanoy" name="Author"/>
+
+    <link href="http://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.css"
+          th:href="@{/webjars/fullcalendar/2.2.5/fullcalendar.css}" rel="stylesheet"/>
+    <link href="http://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.print.css"
+          th:href="@{/webjars/fullcalendar/2.2.5/fullcalendar.print.css}" rel="stylesheet" media="print"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"
+            th:src="@{/webjars/momentjs/2.9.0/min/moment.min.js}" type="text/javascript"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.3/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.3/jquery.min.js}" type="text/javascript"></script>
+    <script src="http://fullcalendar.io/js/fullcalendar-2.2.5/fullcalendar.js"
+            th:src="@{/webjars/fullcalendar/2.2.5/fullcalendar.js}" type="text/javascript"></script>
+    <script th:src="@{/webjars/fullcalendar/2.2.5/lang/pl.js}"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                locale: 'pl',
+                defaultDate: '2020-01-24',
+                editable: true,
+                eventLimit: true,
+                events: {
+                    url: '/show',
+                    type: 'GET',
+                },
+            })
+        });
+    </script>
+
+    <style>
+
+        body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+            font-size: 14px;
+        }
+
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+    </style>
+
     <link rel="icon" href="/static/favicon.ico" th:href="favicon.ico"/>
     <title img="/static/images/logoMale.png" th:href="@{images/logoMale.png}">Yourganizer</title>
     <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}" type="text/css"/>
+    <title>Strona główna</title>
 </head>
-<html>
-    <body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
-    <div class="mainPageContainer">
+<body class="my-body" th:style="'background-image: url(/images/background.jpg);'">
+<div class="calendarContainer">
+<div id='calendar' th:id="calendar"></div>
 
-        <form action="#" method="post">
+<br>
+<civ class="calendarButtons">
 
-            <label for="startime" class="klasa">Data początkowa</label><br/>
-            <input id="startime" type="datetime-local"  class="block" placeholder="Start time" value="2018-06-12T19:30"><br/>
-
-        
-            <label for="endtime" class="klasa">Data końcowa</label><br/>
-            <input id="endtime" type="datetime-local" class="block" placeholder="End Time"  value="2018-06-12T19:30"><br/>
-        
-            <input type="text" class="block" placeholder="Treść"><br/>
-        
-            <p class="klasa">Wybierz priorytet</p>
-            <input type="radio" class="klasa" name="priority" value="wysoki">
-            <div class="kolor">
-                Wysoki
-            </div>
-                <br>
-            <input type="radio" class="klasa" name="priority" value="normalny">
-            <div class="kolor">
-            Normalny
-            </div>
-            <br>
-            <input type="radio" class="klasa" name="priority" value="niski">
-            <div class="kolor">
-            Niski
-            </div>
-            <br>
-        </form>
-
+    <div class="buttonsContainer">
+    <div class="singleButton1">
+<button class="block" type="button"><a href="/addtask">Dodaj zadanie</a></button>
     </div>
-    <div class="buttonGroup">
-        <button>Dodaj</button>
-        <button>Usuń</button>
-        <button>Ustawienia</button>
-        <button>
-            <a  href="/login">
-                Wyloguj
-            </a>
-        </button>
+        <div class="singleButton2">
+<button class="block" type="button"><a href="/deletetask">Usuń zadanie</a></button>
+        </div>
     </div>
-    </body>
+</civ>
+</div>
+</body>
 </html>

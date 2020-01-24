@@ -6,6 +6,9 @@ import com.example.demo.service.EmailServiceImpl;
 import com.example.demo.service.UserDetailsServiceImpl;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,6 +40,16 @@ public class UserController {
         this.userRepo = userRepo;
     }
 
+    public User findUser(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (!(authentication instanceof AnonymousAuthenticationToken)) {
+            String currentUserName = authentication.getName();
+            return userService.findUserByUsername(currentUserName);
+        }
+        else
+            return null;
+    }
+
     @RequestMapping("/login")
     public String login() {
         return "login";
@@ -64,10 +77,10 @@ public class UserController {
     public String addUser(@Valid User user, BindingResult result, Model model) {
         boolean check = userService.saveUser(user);
         if (result.hasErrors()) {
-            return "login-error";
+            return "error";
         }
         if (!check) {
-            return "login-error";
+            return "error";
         } else {
             return "confirmInfo";
         }
@@ -77,7 +90,7 @@ public class UserController {
     public String confirmEmail(@RequestParam("token") String token, User user, Model model) {
         boolean check = userService.checkConfirmation(token);
         if (!check) {
-            return "login-error";
+            return "error";
         } else {
             userRepo.findByConfirmationToken(token).setEnabled(true);
             return "confirmemail";
